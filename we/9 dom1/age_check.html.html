@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <input type="number" placeholder="enter age" />
+    <button onclick="ageCheck()">Submit</button>
+    <p></p>
+  </body>
+</html>
+
+<script>
+  function ageCheck() {
+    var age = document.querySelector("input").value;
+
+    if (age > 18 ) {
+      document.querySelector("p").textContent = "you can drive";
+    } else if (age < 18) {
+      document.querySelector("p").textContent = "you can't drive";
+    } else {
+      document.querySelector("p").textContent = "just enough";
+    }
+  }
+</script>

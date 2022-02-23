@@ -1,0 +1,86 @@
+<html>
+  <head>
+    <title>Practise Selectors</title>
+  </head>
+  <body>
+    <h1>First H1</h1>
+    <h1>Second H1</h1>
+    <h3>First H3</h3>
+    <h3>Second H3</h3>
+    <h5>First H5</h5>
+    <h5>Second H5</h5>
+    <h5>Third H5</h5>
+    <div class="green">First DIV</div>
+    <div class="red">Second DIV</div>
+    <div class="blue">Third DIV</div>
+    <p class="green">First P</p>
+    <p class="red">Second P</p>
+    <p class="blue">Third P</p>
+    <hr />
+    <button onClick="changeH1()">Change H1</button>
+    <button onclick="changeH3()">Change H3</button>
+    <button onclick="changeH5()">Change H5</button>
+    <button onclick="changegreen()">Change Green</button>
+    <button onclick="changeblue()">Change blue</button>
+    <button onclick="changered()">Change red</button>
+  </body>
+</html>
+
+<script>
+  function changeH1() {
+    //On clicking the button Change H3 the colour of all <h3> should turn to green
+    var elems = document.querySelectorAll("h1");
+
+    for (var i = 0; i < elems.length; i++) {
+      elems[i].style.color = "red";
+    }
+  }
+
+  function changeH3() {
+    //On clicking the button Change H3 the colour of all <h3> should turn to green
+    var elems = document.querySelectorAll("h3");
+
+    for (var i = 0; i < elems.length; i++) {
+      elems[i].style.color = "green";
+    }
+  }
+
+  function changeH5() {
+    //On clicking the button Change H3 the colour of all <h3> should turn to green
+    var elems = document.querySelectorAll("h5");
+
+    for (var i = 0; i < elems.length; i++) {
+      elems[i].style.color = "blue";
+    }
+  }
+
+
+  function changegreen() {
+  var res = document.getElementsByClassName("green");
+
+
+  for (var i = 0; i < res.length; i++) {
+    res[i].style.color="green";
+  }
+}
+
+
+function changeblue() {
+  var res = document.getElementsByClassName("blue");
+  console.log(res.length)
+
+  for (var i = 0; i < res.length; i++) {
+    res[i].style.color="blue";
+  }
+}
+function changered() {
+  var res = document.getElementsByClassName("red");
+  console.log(res.length)
+
+  for (var i = 0; i < res.length; i++) {
+    res[i].style.color="red";
+  }
+}
+
+  
+</script>

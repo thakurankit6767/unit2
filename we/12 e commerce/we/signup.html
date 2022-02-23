@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <h1>Signup</h1>
+    <input id="email" type="text" placeholder="enter email" />
+    <input id="password" type="text" placeholder="enter password" />
+    <input id="user" type="text" placeholder="enter username" />
+    <input id="mobile" type="number" placeholder="enter mobile number" />
+    <button>Sign UP</button>
+    <a href="signin.html"><p>Click here to go to signIn page</p></a>
+  </body>
+</html>
+
+<script>
+  document.querySelector("button").addEventListener("click", signUp);
+  var userData = JSON.parse(localStorage.getItem("userDatabase")) || [];
+  
+  function signUp() {
+    var email = document.querySelector("#email").value;
+    var password = document.querySelector("#password").value;
+    var user = document.querySelector("#user").value;
+    var mobile = document.querySelector("#mobile").value;
+
+    var userCred = {
+      emailAdd: email,
+      pass: password,
+      userName: user,
+      mobile: mobile,
+    };
+    userData.push(userCred);
+    localStorage.setItem("userDatabase", JSON.stringify(userData));
+    
+  }
+</script>

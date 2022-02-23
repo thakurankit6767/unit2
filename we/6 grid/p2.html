@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      .container {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        grid-template-rows: repeat(3, 200px);
+        grid-gap: 30px;
+        box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
+      }
+      .container > div {
+        border: 1px solid rgb(102, 89, 89);
+        box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
+        border-radius: 5px;
+      }
+      .container > div > div {
+        display: grid;
+        justify-content: space-between;
+        grid-template-columns: auto auto;
+        padding: 8px;
+      }
+      p+p {
+          color: rgb(45, 204, 13);
+          font-size: large;
+      }
+      .container > div > div >p {
+          font-size: large;
+      }
+      
+     div + p{
+       padding: 10px;
+     }
+
+      
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <div>
+        <div>
+          <p>Cappucino</p>
+          <p>$70</p>
+        </div>
+        <p>
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Consectetur
+          aliquid minus, ex sed culpa aliquam praesentium accusantium accusamus
+          voluptates ab saepe. Ipsam eaque numquam, nostrum ducimus alias
+          eveniet commodi ex!
+        </p>
+      </div>
+      
+      <div> 
+        <div>
+        <p>Cappucino</p>
+        <p>$70</p>
+      </div>
+      <p>
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Consectetur
+        aliquid minus, ex sed culpa aliquam praesentium accusantium accusamus
+        voluptates ab saepe. Ipsam eaque numquam, nostrum ducimus alias
+        eveniet commodi ex!
+      </p></div>
+      
+      <div> <div>
+        <p>Cappucino</p>
+        <p>$70</p>
+      </div>
+      <p>
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Consectetur
+        aliquid minus, ex sed culpa aliquam praesentium accusantium accusamus
+        voluptates ab saepe. Ipsam eaque numquam, nostrum ducimus alias
+        eveniet commodi ex!
+      </p></div>
+      
+      <div> <div>
+        <p>Cappucino</p>
+        <p>$70</p>
+      </div>
+      <p>
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Consectetur
+        aliquid minus, ex sed culpa aliquam praesentium accusantium accusamus
+        voluptates ab saepe. Ipsam eaque numquam, nostrum ducimus alias
+        eveniet commodi ex!
+      </p></div>
+      
+      <div> <div>
+        <p>Cappucino</p>
+        <p>$70</p>
+      </div>
+      <p>
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Consectetur
+        aliquid minus, ex sed culpa aliquam praesentium accusantium accusamus
+        voluptates ab saepe. Ipsam eaque numquam, nostrum ducimus alias
+        eveniet commodi ex!
+      </p></div>
+      
+      <div> <div>
+        <p>Cappucino</p>
+        <p>$70</p>
+      </div>
+      <p>
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Consectetur
+        aliquid minus, ex sed culpa aliquam praesentium accusantium accusamus
+        voluptates ab saepe. Ipsam eaque numquam, nostrum ducimus alias
+        eveniet commodi ex!
+      </p></div>
+      
+      <div> <div>
+        <p>Cappucino</p>
+        <p>$70</p>
+      </div>
+      <p>
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Consectetur
+        aliquid minus, ex sed culpa aliquam praesentium accusantium accusamus
+        voluptates ab saepe. Ipsam eaque numquam, nostrum ducimus alias
+        eveniet commodi ex!
+      </p></div>
+      
+      <div> <div>
+        <p>Cappucino</p>
+        <p>$70</p>
+      </div>
+      <p>
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Consectetur
+        aliquid minus, ex sed culpa aliquam praesentium accusantium accusamus
+        voluptates ab saepe. Ipsam eaque numquam, nostrum ducimus alias
+        eveniet commodi ex!
+      </p></div>
+      
+      <div> <div>
+        <p>Cappucino</p>
+        <p>$70</p>
+      </div>
+      <p>
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Consectetur
+        aliquid minus, ex sed culpa aliquam praesentium accusantium accusamus
+        voluptates ab saepe. Ipsam eaque numquam, nostrum ducimus alias
+        eveniet commodi ex!
+      </p></div>
+    
+    </div>
+  </body>
+</html>

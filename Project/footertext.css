@@ -1,0 +1,88 @@
+#container5 {
+  width: 100%;
+  height: 1500px;
+  /* border: 1px solid red; */
+  background-color: rgb(247, 247, 247);
+}
+
+#box1 {
+  width: 98%;
+  height: 38%;
+  /* border: 5px solid rgb(29, 40, 192); */
+  margin: auto;
+}
+
+#box2 {
+  width: 98%;
+  height: 20%;
+  /* border: 5px solid rgb(81, 214, 19); */
+  margin: auto;
+  display: flex;
+}
+
+.appliance {
+  width: 25%;
+  height: 100%;
+  /* border: 1px solid red; */
+  margin-left: 3px;
+}
+
+#box3 {
+  width: 98%;
+  height: 20%;
+  /* border: 5px solid rgb(173, 117, 13); */
+  margin: auto;
+  display: flex;
+}
+
+.gaming {
+  width: 25%;
+  height: 100%;
+  /* border: 1px solid red; */
+  margin-left: 3px;
+}
+
+#box4 {
+  width: 98%;
+  height: 20%;
+  /* border: 5px solid rgb(173, 117, 13); */
+  margin: auto;
+  display: flex;
+}
+
+.deliver {
+  width: 50%;
+  height: 100%;
+  /* border: 1px solid red; */
+  margin-left: 3px;
+}
+.paragraph {
+  padding-right: 10px;
+  font-size: 16px;
+  color: grey;
+  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+    "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+}
+hr {
+  width: 90%;
+  margin-right: 15%;
+}
+.h1tag,
+.h2tag,
+.h3tag,
+.anchortag {
+  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+    "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+}
+.smallicon {
+  justify-content: space-between;
+  width: 100%;
+  height: 17%;
+  /* border: 1px solid red; */
+  display: flex;
+}
+
+.smallimage {
+  margin-top: 15px;
+  margin-right: 15px;
+}

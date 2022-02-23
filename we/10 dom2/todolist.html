@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+       th,td{
+            border: 1px solid rgb(0, 0, 0) ;
+            padding: 10px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Todo List</h1>
+    <form id="myForm">
+        <label>Name</label>
+        <input id="name" type="text" placeholder="Enter ToDo"> </input> 
+        
+        <label>Quantity</label>
+        <input id="qty" type="number" placeholder="Enter Qty"></input> 
+        
+        <label>Priority</label>
+        <select  id="priority">
+
+            <option value="">---</option>
+            <option value="high">High</option>
+            <option value="Low">Low</option>
+            <option value="Medium">Medium</option>
+        </select>
+    <input type="submit" value="Submit" />
+    </form>
+    <!-- <button>Delete All</button> -->
+    <table>
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Quantity</th>
+                <th>Priority</th>
+                <th>Delete</th>
+            </tr>
+        </thead>
+        <tbody>
+            <!-- <tr>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+            </tr> -->
+        </tbody>
+    </table>
+</body>
+</html>
+
+<script>
+    document.querySelector("#myForm").addEventListener("submit",addItem)
+
+    function addItem(event){
+        event.preventDefault();
+        var name=document.querySelector("#name").value
+        var qty=document.querySelector("#qty").value
+        var priority=document.querySelector("#priority").value
+        // console.log(name,quantity,priority)
+        
+        var row=document.createElement("tr")
+        
+        var td1=document.createElement("td")
+        td1.textContent=name
+        
+        var td2=document.createElement("td")
+        td2.textContent=qty
+        
+        var td3=document.createElement("td")
+        td3.textContent=priority
+        if(priority=="high"){
+            td3.style.backgroundColor="red";
+        }
+        
+        var td4=document.createElement("td")
+        td4.textContent="Delete";
+        td4.addEventListener("click",deleteTask)
+
+        row.append(td1,td2,td3,td4)
+
+        document.querySelector("tbody").append(row)
+
+        function deleteTask(event){
+            console.log(event.target.parentNode);
+            event.target.parentNode.remove();
+        }
+    }
+</script>

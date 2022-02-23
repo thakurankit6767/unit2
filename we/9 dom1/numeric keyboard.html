@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #keyboard{
+         display: grid;
+         grid-template-columns: 100px 100px 100px;
+         grid-template-rows: 100px 100px 100px 100px;
+         grid-gap: 20px;
+         width: 340px;
+         margin: 20px auto;
+         box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+         padding : 20px;
+        }
+
+        #keyboard>button{
+        border: 2px solid black;
+        font-size: 30px;
+        line-height: 100px;
+        background-color: black;
+        color: white;
+        border-radius: 10px;
+        }
+
+        #keyboard > button:nth-last-child(1){
+            background-color: red;
+        }
+
+        #out{
+            margin: auto;
+            width: 370px;
+            height: 70px;
+            border: 2px solid grey;
+            font-size: 40px;
+            line-height: 70px;
+            text-align: center;
+            box-shadow:rgba(0, 0, 0, 0.35) 0px 5px 15px ;
+            border-radius: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div id="out"></div>
+
+    <div id="keyboard">
+        <button onclick="press('0')">0</button>
+        <button onclick="press('1')">1</button>
+        <button onclick="press('2')">2</button>
+        <button onclick="press('3')">3</button>
+        <button onclick="press('4')">4</button>
+        <button onclick="press('5')">5</button>
+        <button onclick="press('6')">6</button>
+        <button onclick="press('7')">7</button>
+        <button onclick="press('8')">8</button>
+        <button onclick="press('9')">9</button>
+        <button onclick="clearAll()">Clear</button>
+
+       
+    </div>
+    
+</body>
+</html>
+
+<script>
+    var out ="";
+    function press(num){
+        out=out + num;
+        console.log(out);
+        document.querySelector("#out").textContent = out;
+    }
+
+
+    function clearAll(){
+        document.querySelector("#out").textContent="";
+        out="";
+    }
+</script>
