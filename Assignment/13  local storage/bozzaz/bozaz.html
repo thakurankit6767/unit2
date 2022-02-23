@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="bozaz.css" />
+  </head>
+  <body>
+    <h1>Bozaz Product</h1>
+    <select id="filter" onchange="filterCat()">
+      <option value="">Filter by category</option>
+      <option value="elec">Electronics</option>
+      <option value="fur">Furniture</option>
+      <option value="home">Home Appliance</option>
+      <option value="books">Books</option>
+    </select>
+    <div id="container">
+      <div>
+        <form id="form">
+          <select id="cat">
+            <option value="">select category</option>
+            <option value="elec">Electronics</option>
+            <option value="fur">Furniture</option>
+            <option value="home">Home Appliance</option>
+            <option value="books">Books</option>
+          </select>
+          <br />
+          <input type="text" id="title" placeholder="Enter Title" />
+          <br />
+          <textarea
+            name=""
+            id="desc"
+            cols="30"
+            rows="10"
+            placeholder="enter description"
+          ></textarea>
+          <br />
+          <input type="number" id="price" placeholder="Enter Price" />
+          <br />
+          <input type="submit" value="submit" />
+        </form>
+      </div>
+      <div id="display">
+        <table>
+          <thead>
+            <tr>
+              <th>Category</th>
+              <th>Title</th>
+              <th>Description</th>
+              <th>Price</th>
+              <th></th>
+            </tr>
+          </thead>
+          <tbody></tbody>
+        </table>
+      </div>
+    </div>
+  </body>
+</html>
+
+<script src="bozaz.js"></script>
+
+<!-- 1.your html file
+2. your style file
+3.your script file -->
+
+
+
+
+
+<!-- // 5 days of project -- 5-6 members - teams are decided  by ops team
+// e-commerce-website 
+// home screen should be built- for every website -->

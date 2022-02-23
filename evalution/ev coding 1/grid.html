@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        .container{
+    display: grid;
+    grid-template-rows: repeat(12,100px);
+    grid-template-columns: repeat(6,1fr);
+    grid-gap: 20px;
+    grid-template-areas:
+     "a a a a a a "
+     "a a a a a a "
+     "b b b c c c"
+     "b b b c c c"
+     "b b b c c c"
+     "b b b d d d"
+     "b b b d d d"
+     "b b b d d d"
+     "e e e e e e"
+     "e e e e e e"
+     "e e e e e e"
+     "e e e e e e"
+     "f f f f f f"
+     
+    
+     
+
+}
+.container{
+border: 5px solid red;
+    }
+
+.container>div:nth-child(1){
+    grid-area: a;
+  
+    text-align: center;
+    background-color: black;
+    text-align: center;
+    margin-top: 20px;
+    margin-left: 20px;
+    margin-right: 20px;
+    color: white;
+    font-size: 50px;
+    margin-bottom: 20px;
+    padding-top: 55px;
+   
+   
+    
+}
+
+.container>div:nth-child(2){
+    grid-area: b;
+  
+    text-align: center;
+    background-color: black;
+    text-align: center;
+    margin-top: 20px;
+    margin-left: 20px;
+    margin-right: 20px;
+    color: white;
+    font-size: 50px;
+    margin-bottom: 20px;
+    padding-top: 300px;
+   
+    
+}
+
+
+.container>div:nth-child(3){
+    grid-area: c;
+    text-align: center;
+    background-color: black;
+    text-align: center;
+    margin-top: 20px;
+    margin-left: 20px;
+    margin-right: 20px;
+    color: white;
+    font-size: 50px;
+
+    margin-bottom: 20px;
+    padding-top: 120px;
+   
+    
+}
+
+
+.container>div:nth-child(4){
+    grid-area: d;
+  
+    text-align: center;
+    background-color: black;
+    text-align: center;
+    margin-top: 20px;
+    margin-left: 20px;
+    margin-right: 20px;
+    color: white;
+    font-size: 50px;
+    margin-bottom: 20px;
+    padding-top: 120px;
+   
+    
+}
+
+
+.container>div:nth-child(5){
+    grid-area: e;
+  
+    text-align: center;
+    background-color: black;
+    text-align: center;
+    margin-top: 20px;
+    margin-left: 20px;
+    margin-right: 20px;
+    color: white;
+    font-size: 50px;
+    margin-bottom: 20px;
+    padding-top: 160px;
+   
+    
+}
+
+
+.container>div:nth-child(6){
+    grid-area: f;
+  
+    text-align: center;
+    background-color: black;
+    text-align: center;
+    margin-top: 20px;
+    margin-left: 20px;
+    margin-right: 20px;
+    color: white;
+    font-size: 50px;
+    margin-bottom: 20px;
+    padding-top: 5px;
+   
+    
+}
+
+
+
+    </style>
+</head>
+<body>
+    <div class="container">
+
+   <div>HEADER</div>
+   <div>ARTICLE</div>
+   <div>TEXT 1</div>
+   <div> TEXT 2</div>
+   <div>MAIN</div>
+   <div>FOOTER</div>
+    
+
+</div>
+</body>
+</html>

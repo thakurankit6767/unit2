@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+     
+      #container {
+         /* display: flex; */
+          
+    display: grid;
+     grid-template-columns: 33% 33% 33%;
+ 
+     grid-gap: 40px;
+ 
+    
+} 
+
+
+     /* .smalldiv{
+       display: flex;
+       justify-content: space-between;
+     } */
+
+     #container>div{
+       margin: 20px;
+     }
+
+     /* .price2{
+       text-decoration: line-through;
+     } */
+      
+     #container>div>div{
+       display: flex;
+       justify-content: space-between;
+     }
+     #container>div>div>p:nth-child(2){
+      text-decoration: line-through;
+     }
+
+     button{
+      
+        width: 105%;
+        height: 40px;
+        background-color: green;
+        color: white;
+        
+     }
+
+     select{
+         width: 200px;
+         height: 30px;
+         margin-left: 20px;
+     }
+    </style>
+  </head>
+  <body>
+
+    <select name="" id="priceSort" onchange="handlePriceSort()">
+      <option value="">-----</option>
+      <option value="low">Low to High</option>
+      <option value="high">High to Low</option>
+    </select>
+    
+
+    <select name="" id="nameSort" onchange="handleNameSort()">
+      <option value="">-----</option>
+      <option value="asc">Ascending</option>
+      <option value="dsc">Descending</option>
+    </select>
+    
+    <div id="container">
+      
+       </div> 
+
+     
+
+
+  </body>
+</html>
+
+<script>
+
+
+var data = [
+    {
+      MRP: 690,
+      type: "Striped Round Neck T-shirt",
+      image_url:
+        "https://assets.myntassets.com/f_webp,dpr_2.0,q_60,w_210,c_limit,fl_progressive/assets/images/1700871/2020/1/22/f932ae44-0fb8-4b92-b7bc-f1756253294b1579692118186-HRX-by-Hrithik-Roshan-Men-Teal-Blue-Printed-T-shirt-90515796-1.jpg",
+    },
+    {
+      MRP: 799,
+
+      type: "Striped Round Neck T-shirt",
+      image_url:
+        "https://assets.myntassets.com/f_webp,dpr_2.0,q_60,w_210,c_limit,fl_progressive/assets/images/10424682/2019/10/30/a034179e-9db3-4a3a-bce0-abae4d1413531572419249956-Roadster-Men-Tshirts-2571572419248675-1.jpg",
+    },
+    {
+      MRP: 899,
+
+      type: "Men Printed Cotton T-shirt",
+      image_url:
+        "https://assets.myntassets.com/f_webp,dpr_2.0,q_60,w_210,c_limit,fl_progressive/assets/images/12816440/2021/2/9/d81a95aa-a268-4c7b-9deb-b960ad1586c41612855488092-HERENOW-Men-Tshirts-5601612855486681-1.jpg",
+    },
+    {
+      MRP: 999,
+      type: "Men Printed Cotton T-shirt",
+      image_url:
+        "https://assets.myntassets.com/f_webp,dpr_2.0,q_60,w_210,c_limit,fl_progressive/assets/images/1700871/2020/1/22/f932ae44-0fb8-4b92-b7bc-f1756253294b1579692118186-HRX-by-Hrithik-Roshan-Men-Teal-Blue-Printed-T-shirt-90515796-1.jpg",
+    },
+    {
+      MRP: 1099,
+
+      type: "Men Printed Cotton T-shirt",
+      image_url:
+        "https://assets.myntassets.com/f_webp,dpr_2.0,q_60,w_210,c_limit,fl_progressive/assets/images/10424682/2019/10/30/a034179e-9db3-4a3a-bce0-abae4d1413531572419249956-Roadster-Men-Tshirts-2571572419248675-1.jpg",
+    },
+    {
+      MRP: 1299,
+      type: "Men Printed Cotton T-shirt",
+      image_url:
+        "https://assets.myntassets.com/f_webp,dpr_2.0,q_60,w_210,c_limit,fl_progressive/assets/images/12816440/2021/2/9/d81a95aa-a268-4c7b-9deb-b960ad1586c41612855488092-HERENOW-Men-Tshirts-5601612855486681-1.jpg",
+    },
+    {
+      MRP: 1399,
+
+      type: "Men Printed Cotton T-shirt",
+      image_url:
+        "https://assets.myntassets.com/f_webp,dpr_2.0,q_60,w_210,c_limit,fl_progressive/assets/images/12816440/2021/2/9/d81a95aa-a268-4c7b-9deb-b960ad1586c41612855488092-HERENOW-Men-Tshirts-5601612855486681-1.jpg",
+    },
+    {
+      MRP: 499,
+      type: "Men Printed Cotton T-shirt",
+      image_url:
+        "https://assets.myntassets.com/f_webp,dpr_2.0,q_60,w_210,c_limit,fl_progressive/assets/images/10424682/2019/10/30/a034179e-9db3-4a3a-bce0-abae4d1413531572419249956-Roadster-Men-Tshirts-2571572419248675-1.jpg",
+    },
+    {
+      MRP: 299,
+
+      type: "Men Printed Cotton T-shirt",
+      image_url:
+        "https://assets.myntassets.com/f_webp,dpr_2.0,q_60,w_210,c_limit,fl_progressive/assets/images/12816440/2021/2/9/d81a95aa-a268-4c7b-9deb-b960ad1586c41612855488092-HERENOW-Men-Tshirts-5601612855486681-1.jpg",
+    },
+    {
+      MRP: 199,
+      type: "Men Printed Cotton T-shirt",
+      image_url:
+        "https://assets.myntassets.com/f_webp,dpr_2.0,q_60,w_210,c_limit,fl_progressive/assets/images/12816440/2021/2/9/d81a95aa-a268-4c7b-9deb-b960ad1586c41612855488092-HERENOW-Men-Tshirts-5601612855486681-1.jpg",
+    },
+  ];
+
+
+
+  function handlePriceSort() {
+    var selected = document.querySelector("#priceSort").value;
+    console.log(selected);
+    if (selected == "high") {
+      data.sort(function (a, b) {
+        return Number(b. MRP) - Number(a. MRP);
+      });
+    }
+    if (selected == "low") {
+     data.sort(function (a, b) {
+        return Number(a. MRP) - Number(b. MRP);
+      });
+    }
+    //console.log(products);
+    displayItem(elem);
+  }
+
+  function handleNameSort() {
+    var selected = document.querySelector("#nameSort").value;
+    console.log(selected);
+
+    if (selected == "asc") {
+     data.sort(function (a, b) {
+        if (a. type > b. type) return 1;
+        if (a. type < b. type) return -1;
+        return 0;
+      });
+    }
+    if (selected == "dsc") {
+    data.sort(function (a, b) {
+        if (a. type > b. type) return -1;
+        if (a. type< b. type) return 1;
+        return 0;
+      });
+    }
+    displayItem(elem);
+  }
+
+
+  
+data.map(function(elem) {
+   
+  var maindiv=document.createElement("div")  
+   
+  var image = document.createElement("img")
+  image.setAttribute("src",elem. image_url);
+  
+  var h4=document.createElement("h4");
+  h4.textContent=elem.type;
+
+
+  
+  var smalldiv=document.createElement("div")
+  smalldiv.setAttribute("class","smalldiv")
+  var price=document.createElement("p")
+  price.textContent=elem.MRP
+  
+  var strikedOffPrice=document.createElement("p")
+  strikedOffPrice.textContent=elem.strikedOffPrice
+  strikedOffPrice.setAttribute("class","price2")
+
+  var button=document.createElement("button")
+  button.textContent="Checkout"
+  button.setAttribute("class","button")
+  
+  smalldiv.append(price,strikedOffPrice,button)
+
+
+  maindiv.append(image,h4,smalldiv,button)
+  
+  document.getElementById("container").append(maindiv)
+
+}
+  );
+
+
+</script>

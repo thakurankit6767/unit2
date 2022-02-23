@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+.container{
+    display: grid;
+    grid-template-rows: repeat(12,90px);
+    grid-template-columns: repeat(12,1fr);
+    grid-gap: 15px;
+    grid-template-areas:
+     "a a a a a a a a a a a a"
+     "b b b b b b b b b b b b"
+     "c c c c d d d d e e e e"
+     "c c c c d d d d e e e e"
+     "c c c c d d d d e e e e"
+     "c c c c d d d d e e e e"
+     
+     }
+.container{
+/* border: 1px solid red; */
+width: 80%;
+height: 700px;
+margin: auto;
+    }
+
+    .container>div:nth-child(1){
+    grid-area: a;
+    /* border: 1px solid red; */
+    text-align: center;
+    
+}
+h1{
+    margin-bottom: -10px;
+}
+
+
+.container>div:nth-child(2){
+    grid-area: b;
+    /* border: 1px solid red; */
+    text-align: center;
+}
+
+
+.container>div:nth-child(3){
+    grid-area: c;
+    /* border: 1px solid red; */
+    text-align: center;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+}
+
+.container>div:nth-child(4){
+    grid-area: d;
+    /* border: 1px solid red; */
+    text-align: center;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+}
+
+
+.container>div:nth-child(5){
+    grid-area: e;
+    /* border: 1px solid red; */
+    text-align: center;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+}
+
+
+
+
+.green >h1{
+    color: green;
+}
+
+.red >h1{
+    color: rgb(240, 0, 0);
+}
+
+.blue >h1{
+    color: rgb(2, 4, 172);
+}
+
+button {
+        background-color: transparent;
+        border: 1px solid blue;
+        color: blue;
+        font-weight: bold;
+        padding: 10px 40px;
+        border-radius: 10px;
+        margin-bottom: 20px;
+        cursor: pointer;
+      }
+      
+
+      button:hover {
+        background-color: blue;
+        color: white;
+      }
+
+.container>div>h3{
+    margin-left: 90px;
+    margin-right: 90px;
+}
+
+     .green>h4{
+
+        margin-left: 40px;
+        margin-right: 40px;
+     }
+     .red>h4{
+
+margin-left: 40px;
+margin-right: 40px;
+}
+.blue>h4{
+
+margin-left: 40px;
+margin-right: 40px;
+}
+
+
+
+
+
+    </style>
+
+
+
+
+
+</head>
+<body>
+    <div class="container">
+  
+        <div>
+            
+            
+            <h1>Choose a plan that right for your business </h1>
+            <h1>Your Business</h1>
+            
+        </div>
+        
+        <div><h3>Lorem ipsum dolor, sit sam inventore esse tempora numquam cum, dicta blanditiis, tenetur aperiam magnam, minus suscipit perspiciatis! Minima eos ipsa doloribus asperiores corrupti necessitatibus ut.</h3>
+        
+        </div>
+        
+        
+        <div class="green">
+            <h3>Lorem ipsum dolor s eius?</h3>
+            <h1>Free</h1>
+            <h4><i>Per Month</i></h4>
+            <h4>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Distinctio rem sunt reprehenderit sit incidunt consectetur deleniti repudiandae voluptate, mollitia fugit voluptas adipisci enim porro. Odio optio sapiente qui? Beatae, molestias!Lorem</h4>
+        <button>Read More</button>
+        
+    </div>
+        
+        
+        
+        <div class="red">
+            <h3>Lorem ipsum dolor s eius?</h3>
+            <h1>$500.00</h1>
+            <h4><i>Per Month</i></h4>
+            <h4>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Distinctio rem sunt reprehenderit sit incidunt consectetur deleniti repudiandae voluptate, mollitia fugit voluptas adipisci enim porro. Odio optio sapiente qui? Beatae, molestias!Lorem</h4>
+        <button>Read More</button></div>
+        
+        <div class="blue"><h3>Lorem ipsum dolor s eius?</h3>
+            <h1>&300.00</h1>
+            <h4><i>Per Month</i></h4>
+            <h4>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Distinctio rem sunt reprehenderit sit incidunt consectetur deleniti repudiandae voluptate, mollitia fugit voluptas adipisci enim porro. Odio optio sapiente qui? Beatae, molestias!Lorem</h4>
+        <button>Read More</button></div>
+
+    </div>
+
+</body>
+</html>

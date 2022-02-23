@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+    
+    .container {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        grid-template-rows: 80px 450px;
+        width: 95%;
+        grid-gap: 20px;
+       
+        margin: auto;
+        grid-template-areas:
+         "a a a"
+         "b c d"
+        
+       }
+
+
+
+      .container>div:nth-child(1){
+    grid-area: a;
+    /* border: 1px solid red; */
+    text-align: center;
+   
+    
+}
+
+
+
+.container>div:nth-child(2){
+    grid-area: b;
+    /* border: 1px solid red; */
+    text-align: center;
+}
+
+
+.container>div:nth-child(3){
+    grid-area: c;
+    /* border: 1px solid red; */
+    text-align: center;
+   
+}
+
+.container>div:nth-child(4){
+    grid-area: d;
+    /* border: 1px solid red; */
+    text-align: center;
+   
+}
+
+       img{
+           width:100%;
+           height: 70%;
+       }
+
+
+       @media only screen and (min-width: 375px) and (max-width: 768px) {
+        .container {
+         
+            grid-template-columns: repeat(2, 1fr);
+            grid-template-rows: 50px 500px 500px ;
+       width: 100%;
+        grid-template-areas:
+         "a a"
+         "b c"
+         "d d"
+      
+        
+       
+        }
+      }
+
+      @media only screen and (min-width: 0px) and (max-width: 375px) {
+        .container {
+          width: 100%;
+          grid-template-columns: repeat(1, 1fr);
+          grid-template-rows: 50px 300px 300px 300px;
+          grid-template-areas:
+         "a"
+         "b"
+         "c"
+         "d"
+        
+          
+        }
+      }
+
+     
+    </style>
+</head>
+<body>
+    <div class="container">
+
+
+        <div class="box1">
+    <h1>OUR BLOG</h1>
+</div>
+
+
+
+
+    <div class="box2">
+        <img src="https://preview.colorlib.com/theme/fashe/images/xblog-01.jpg.pagespeed.ic.RXKhYi6o7N.webp" alt="" srcset=""><h3>Lorem ipsum dolor sit, amet consectetur eleniti. Ut laudantium animi ducimus quisquam magni.</h3>
+           <h5>Lorem, ipsum dolor sit amet coconsequatur! July 28 2017</h5>
+           <h6>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Provident quidem non libero eveniet magnam, dicta natus atque voluptas nobis repellat? Eos vitae est pariatur nemo delectus consequatur, sapiente et! Reprehenderit.</h6>
+           
+    </div>
+    
+    <div class="box3">
+        <img src="https://preview.colorlib.com/theme/fashe/images/xblog-02.jpg.pagespeed.ic.uNlo4Zicxu.webp" alt="" srcset=""><h3>Lorem ipsum dolor sit, amet consectetur eleniti. Ut laudantium animi ducimus quisquam magni.</h3>
+        <h5>Lorem, ipsum dolor sit amet coconsequatur! July 28 2017</h5>
+    
+    <h6>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Rem dolores illo ab voluptates explicabo velit nisi minima deleniti quam veritatis saepe necessitatibus, pariatur, labore non, praesentium fugit ratione magni? Ducimus.</h6>
+    </div>
+    
+    <div class="box4">
+        <img src="https://preview.colorlib.com/theme/fashe/images/xblog-03.jpg.pagespeed.ic.3cqHQ5aCVq.webp" alt="" srcset=""><h3>Lorem ipsum dolor sit, amet consectetur eleniti. Ut laudantium animi ducimus quisquam magni.</h3>
+        <h5>Lorem, ipsum dolor sit amet coconsequatur! July 28 2017</h5>
+    <h6>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Tempore fugit accusantium ullam ad nostrum suscipit amet, nihil inventore quasi recusandae sequi labore architecto. Doloremque earum vel quo voluptatum quod doloribus!</h6>
+    
+   
+
+</div>
+    
+
+
+</div>
+</body>
+</html>

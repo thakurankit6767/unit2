@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      
+      #container{
+        width: 610px;
+        height: 200px;
+        border: 1px solid rgb(99, 94, 94);
+        display: flex;
+        border-radius: 6px;
+        }
+       
+       button{
+            color: white;
+            border-radius: 5px;
+            background-color:rgb(21, 141, 189);
+            border: none;
+            padding: 10px 10px;
+        }
+
+       #container>div2{
+        margin: -10px; 
+        padding-left: 15px;
+}
+</style>
+  </head>
+  <body>
+    <div id="container">
+    
+   <!-- <div>
+      <img src="https://via.placeholder.com/400x150" alt="" />
+    </div>
+      
+    <div>
+      <h2>Alice Lidddle</h2>
+      <h4>
+        Lorem ipsum dolor, sit amet consectetur adipisicing elit. Eius tenetur
+        facilis, vero aliquid ratione, deleniti ex in quas, placeat
+        necessitatibus et eveniet dolore harum laborum. Exercitationem, minus?
+        Facere, consequuntur eaque!
+      </h4>
+      <button>View Profile</button>
+    </div> -->
+
+</div>
+  </body>
+</html>
+
+<script>
+  var div1 = document.createElement("div");
+  
+  var image = document.createElement("img"); 
+  image.setAttribute("src", "https://via.placeholder.com/200x200");
+
+
+  div1.append(image);
+  
+  var div2 = document.createElement("div2");
+  var h2 = document.createElement("h2");
+  h2.textContent ="Alice Liddle"
+  var h4 = document.createElement("h4");
+  h4.textContent =
+    "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Eius teneturfacilis, vero aliquid ratione, deleniti ex in quas, placeatnecessitatibus et eveniet dolore harum laborum. Exercitationem, minus?Facere, consequuntur eaque!";
+  var button = document.createElement("button");
+  button.textContent="View Profile"
+  div2.append(h2,h4,button);
+ 
+  document.querySelector("#container").append(div1,div2);
+
+// button.style.backgroundColor = "green";
+
+// var body = document.querySelector("body");
+//   body.append(div);
+</script>
+
+
+<!-- // create  main div , image , child div h2,p,button -->

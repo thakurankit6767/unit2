@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+
+    <style>
+
+
+          select{
+            width: 200px; 
+            height: 30px;
+          }
+        form>input{
+          margin-bottom: 20px;
+          margin-top: 20px;
+          width: 400px;
+        }
+        form>select{
+            width: 200px;
+        }
+
+        form>input[type="submit"]{
+            background-color: red;
+            color: white;
+            padding: 10px 20px;
+            width: 200px;
+        }
+
+        table,
+        td,
+        th{
+            border: 1px solid rgb(42, 151, 15);
+            text-align: left;
+        }
+
+
+        table{
+            border-collapse: collapse;
+          width: 100px;
+          box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+
+
+        }
+
+        th,td{
+            padding: 5px 40px;
+        }
+        #filter{
+            margin-bottom: 20px;
+        }
+        #container{
+            display: flex;
+            justify-content: space-around;
+
+        }
+
+
+        tr{
+            padding: 5px 80px;
+        }
+        @media only  screen and (min-width:0px)and (max-width:575px) {
+            #container{
+              flex-direction: column;
+        } 
+    }
+
+    </style>
+</head>
+<body>
+    <h1>Karlo</h1>
+
+
+    
+    <select id="numbersort" onchange="pricesort()">
+        <option value="">-------</option>
+        <option value="low">Low To High</option>
+        <option value="high">Higth To Low</option>
+       
+        </select>
+    
+    <select id="filter" onchange="filterCat()">
+    <option value="">Filter by category</option>
+    <option value="Refund">refund</option>
+    <option value="Item Missing">item missing</option>
+    <option value="Oredr Status">oredr status</option>
+    <option value="Delivery">dilivery</option>
+    <option value="Feedback">feedback</option>
+    </select>
+
+      <div id="container">
+         <div>
+             <form id="form">
+                
+                <select id="cat">
+                    <option value="">Select Category</option>
+                    <option value="Refund">refund</option>
+                    <option value="Item Missing">item missing</option>
+                    <option value="Oredr Status">oredr status</option>
+                    <option value="Delivery">dilivery</option>
+                    <option value="Feedback">feedback</option>
+                    </select>
+                    <br />
+
+                    <input type="text" id="title" placeholder="Ticket Body"/>
+                    <br/>
+
+                    <input type="date" id="desc" placeholder="Date Stamp"/>
+                    <br/>
+
+                    
+                    <input type="number" id="price" placeholder="Ticket Number "/>
+                    <br/>
+                    
+                    <input type="submit" value="submit" />
+                  
+             </form>
+         </div>
+           
+         <div id="display">
+
+            <table>
+                <thead>
+                    <tr>
+                        <th>Category</th>
+                        <th>Ticket Body</th>
+                        <th>Date Stamp</th>
+                        <th>Ticket Number</th>
+                    </tr>
+                </thead>
+            <tbody></tbody>
+            </table>
+           </div>
+      
+      
+        </div>
+
+</body>
+</html>
+
+
+<script>
+
+document.querySelector("#form").addEventListener("submit",formSubmit)
+
+
+var karlo=JSON.parse(localStorage.getItem("karloData"))||[]
+displayTable(karlo)
+
+
+
+
+function filterCat(){
+    var selected=document.querySelector("#filter").value
+
+    var filterList=karlo.filter(function(elem){
+        return elem.category == selected
+
+    
+       
+    })
+
+    console.log(filterList)
+    displayTable(filterList)
+}
+
+function pricesort(){
+    var selected=document.querySelector("#numbersort").value;
+    console.log(selected)
+    if(selected =="high"){
+        karlo.sort(function(a,b){
+            return Number(b.price)- Number(a.price)
+        })
+    }
+  
+    if(selected=="low"){
+        karlo.sort(function(a,b){
+            return Number(a.price)- Number(b.price)
+        })
+    }
+displayTable(karlo)
+}
+
+
+
+
+
+function formSubmit(event){
+    event.preventDefault()
+
+    var karloobj={
+        category:form.cat.value,
+       title:form.title.value,
+      description:form.desc.value,
+     price:form.price.value,
+        
+        
+    }
+karlo.push(karloobj)
+// displayTable(karlo)
+localStorage.setItem("karloData",JSON.stringify(karlo))
+}
+
+function displayTable(karlo){
+    var tbody=document.querySelector("tbody")
+    tbody.textContent="";
+    // console.log(karlo)
+    karlo.map(function(elem,index){
+
+        var tr=document.createElement("tr")
+        var td1=document.createElement("td")
+        var td2=document.createElement("td")
+        var td3=document.createElement("td")
+        var td4=document.createElement("td")
+       
+       td1.textContent=elem.category
+       td2.textContent=elem.title
+       td3.textContent=elem.description
+       td4.textContent=elem.price
+   
+       
+        tr.append(td1,td2,td3,td4)
+        tbody.append(tr)
+    })
+
+   
+}
+
+</script>

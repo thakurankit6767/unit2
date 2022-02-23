@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        #container{
+            display: grid;
+            grid-template-columns: repeat(4,1fr);
+         
+            grid-gap: 20px;
+            width: 100%;
+           
+            grid-template-areas: 
+              
+              "a a a a"
+            
+        }
+
+
+
+
+        #container>div{
+            margin: 20px;
+            /* border: 1px solid red; */
+            border-radius: 20px;
+            box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+
+        }
+
+        h2{
+            text-align: center;
+        }
+
+        p{
+            text-align: center;
+        }
+
+        img{
+            border-radius: 20px;
+        }
+       
+
+        @media only  screen and (min-width:375px)and (max-width:768px) {
+            #container{
+                grid-template-columns: repeat(2,1fr);
+                grid-template-rows: 500px 500px 500px 500px;
+          
+            width: 100%;
+
+            grid-template-areas: 
+
+            "a a"
+            "a a"
+        } 
+
+    } 
+
+
+
+
+    @media only  screen and (min-width:0px)and (max-width:375px) {
+            #container{
+                grid-template-columns: repeat(1,1fr);
+                grid-template-rows: 400px 400px;
+          
+          
+
+            grid-template-areas: 
+
+            "a"
+            "a"
+            "a"
+            "a"
+        } 
+
+    } 
+
+
+    </style>
+</head>
+<body>
+    <div id="container">
+
+    </div>
+</body>
+</html>
+
+
+<script>
+    var data = [
+    {
+      
+      name: "Ankush Sachdeva",
+      image: "https://d27028dliefpk3.cloudfront.net/assets/our-investors/ankush-sachdeva-sharechat.jpg",
+      role: "Co-founder and CEO, ShareChat"
+    },
+    {
+      
+      name: "Bhanu Pratap Singh",
+      image: "https://d27028dliefpk3.cloudfront.net/assets/our-investors/bhanu-pratap-singh-sharechat.jpg",
+      role: "Co-founder and CTO, ShareChat"
+    },
+    {
+      
+      name: "Farid Ahsan",
+      image: "https://d27028dliefpk3.cloudfront.net/assets/our-investors/farid-ahsan-sharechat.png",
+      role: "Co-founder and COO, ShareChat"
+    },
+    {
+      
+        name: "Amit Kumar Agarwal",
+        image: "https://d27028dliefpk3.cloudfront.net/assets/our-investors/amit-kumar-agarwal-nobroker.jpg",
+        role: "Founder and CEO, NoBroker"
+      }
+    
+  ]
+
+  data.map(function(elem){
+
+  var maindiv=document.createElement("div")
+
+  var image=document.createElement("img")
+  image.setAttribute("src",elem.image);
+
+  var h2=document.createElement("h2");
+  h2.textContent=elem.name;
+
+//   var smalldiv=document.createElement("div")
+//   smalldiv.setAttribute("class","smalldiv")
+
+  var price=document.createElement("p")
+  price.textContent=elem.role
+
+//   smalldiv.append(price)
+  maindiv.append(image,h2,price)
+
+  document.getElementById("container").append(maindiv)
+
+  });
+</script>

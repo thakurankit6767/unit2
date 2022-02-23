@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+
+       
+       th,td{
+            /* border: 1px solid rgb(0, 0, 0) ; */
+            padding: 5px 50px;
+            box-shadow: rgba(0, 0, 0, 0.07) 0px 1px 1px, rgba(0, 0, 0, 0.07) 0px 2px 2px, rgba(0, 0, 0, 0.07) 0px 4px 4px, rgba(0, 0, 0, 0.07) 0px 8px 8px, rgba(0, 0, 0, 0.07) 0px 16px 16px;
+        }
+
+       tr{
+            /* border: 1px solid rgb(0, 0, 0) ; */
+            padding: 5px 80px;
+           
+        }
+
+        #container{
+            display: flex;
+            width: 600px;
+            height: 800px;
+            border: 1 px solid red;
+        }
+
+       #box1{
+           width: 600px;
+           line-height: 40px;
+           margin-left: 50px;
+
+       }
+
+
+       #box2{
+           width: 600px;
+           line-height: 30px;
+           margin-left: 50px;
+
+       }
+
+
+       input,select{
+           width: 400px;
+           height: 30px;
+       }
+
+       label{
+          font-size: 25px;
+       }
+
+       button{
+           background-color: blue;
+           padding: 5px 20px;
+           border-radius: 5px;
+           color: white;
+       }
+
+       h1{
+           color: blue;
+       }
+    </style>
+</head>
+<body>
+
+    <div id="container">
+    <div id="box1">
+    <h1>Add Product</h1>
+    <div id="myForm">
+       
+        
+        <label>Category</label><br>
+        <select  id="category">
+
+            <option >---</option>
+            <option >Electronics</option>
+            <option>Furniture</option>
+            <option >Home Appliance</option>
+            <option >Books</option>
+        </select><br>
+
+        <label>Title</label><br>
+        <input id="title" type="text" placeholder="Enter Title"> </input> <br>
+        
+        <label>Description</label><br>
+        <input id="description" type="text" placeholder="Enter Description"></input> <br>
+
+        <label>Price</label><br>
+        <input id="price" type="number" placeholder="Enter Price"></input> <br>
+
+
+    <!-- <input type="submit" value="Submit" /> -->
+    </div>
+    <button >Add</button>
+    
+    
+</div>
+    
+<div id="box2">
+<table>
+        <thead>
+            <tr>
+
+                <h1>Product Info</h1>
+                
+                <!-- <th>#</th> -->
+                <th>Category</th>
+                <th>Title</th>
+                <th>Description</th>
+                <th>Price</th>
+            </tr>
+        </thead>
+        <tbody>
+            <!-- <tr>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+            </tr> -->
+        </tbody>
+    </table>
+</div>
+
+
+</div>
+</body>
+</html>
+
+<script>
+    document.querySelector("button").addEventListener("click",addItem);
+        var arr= JSON.parse(localStorage.getItem("todoList"))|| [];
+        displayTable(arr);
+    function addItem(event){
+        event.preventDefault();
+        // var no= document.querySelector("#no").value;
+        var category= document.querySelector("#category").value;
+        var title= document.querySelector("#title").value;
+        var description= document.querySelector("#description").value;
+        var price= document.querySelector("#price").value;
+        // console.log(name,quantity,priority)
+
+        var todoObj = {
+            // itemNo:no,
+            itemCategory: category,
+            itemTitle: title,
+            itemDescription: description,
+            itemPrice: price,
+        };
+       
+        arr.push(todoObj);
+
+        console.log(arr);
+
+        localStorage.setItem("todoList",JSON.stringify(arr));
+
+        displayTable(arr)
+
+    }
+     
+    
+function displayTable(arr){
+
+    document.querySelector("tbody").innerHTML="";
+        arr.map(function(elem){
+
+var row=document.createElement("tr")
+
+// var td1=document.createElement("td")
+// td1.textContent=elem.itemNo
+
+
+var td2=document.createElement("td")
+td2.textContent=elem.itemCategory
+
+var td3=document.createElement("td")
+td3.textContent=elem.itemTitle
+
+
+var td4=document.createElement("td")
+td4.textContent=elem.itemDescription
+
+var td5=document.createElement("td")
+td5.textContent=elem.itemPrice
+
+
+// var td5=document.createElement("td")
+// td5.textContent="Delete";
+// td4.addEventListener("click",deleteTask)
+
+row.append(td2,td3,td4,td5)
+
+document.querySelector("tbody").append(row)
+
+})
+
+     }
+        // function deleteTask(event){
+        //     console.log(event.target.parentNode);
+        //     event.target.parentNode.remove();
+        // }
+    
+</script>

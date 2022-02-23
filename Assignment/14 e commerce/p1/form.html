@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+
+<style>
+  #main{
+    margin: auto;
+    margin-top: 100px;
+    width: 440px;
+    height: 350px;
+    /* border: 1px solid red; */
+    border-radius: 5px ;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+
+}
+
+
+input,select{
+   width: 400px;
+   height: 30px;
+   margin-left: 15px;
+}
+
+label{
+  font-size: 25px;
+}
+
+
+h1{
+
+margin-left:110px;
+ 
+}
+
+button{
+   padding: 5px 10px;
+   color: white;
+   background-color: orange;
+   border: none;
+   margin-left: 50px;
+}
+
+/* p{
+margin-left: 10px;  
+}
+*/
+
+</style>
+  <body>
+    <div id="main"> 
+        <h1>Form Page</h1>
+        <form id="form">
+          <input id="name" type="text" placeholder="enter name of product" />
+          <input id="price" type="number" placeholder="Enter price" />
+          <select id="select">
+            <option value="tee">T-Shirt</option>
+            <option value="shoes">Shoes</option>
+            <option value="shirt">Shirt</option>
+          </select>
+          <input id="img" type="text" placeholder="Enter image url" />
+          <input type="submit" />
+        </form>
+    
+        <button>Go to Product page</button>
+    </div>
+   
+  </body>
+</html>
+
+<script>
+  document.querySelector("#form").addEventListener("submit", addItem);
+  var prod = JSON.parse(localStorage.getItem("shoppingItems")) || [];
+  
+  function addItem(event) {
+    event.preventDefault();
+    var name = document.querySelector("#name").value;
+    var price = document.querySelector("#price").value;
+    var type = document.querySelector("#select").value;
+    var image = document.querySelector("#img").value;
+
+    var prodObj = {
+      name: name,
+      price: price,
+      type: type,
+      image: image,
+    };
+    prod.push(prodObj);
+    localStorage.setItem("shoppingItems", JSON.stringify(prod));
+  }
+
+  document.querySelector("button").addEventListener("click", function () {
+    window.location.href = "prod.html";
+  });
+</script>

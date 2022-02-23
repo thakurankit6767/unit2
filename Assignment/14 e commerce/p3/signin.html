@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+   
+   <style>
+       
+    #main{
+        margin: auto;
+        margin-top: 100px;
+        width: 430px;
+        height: 350px;
+        /* border: 1px solid red; */
+        border-radius: 5px ;
+        box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+
+    }
+
+
+    input{
+       width: 400px;
+       height: 30px;
+       margin-left: 10px;
+   }
+
+   
+   h1{
+   
+    margin-left: 160px;
+     
+   }
+
+   button{
+       padding: 5px 10px;
+       color: white;
+       background-color: orange;
+       border: none;
+       margin-left: 10px;
+   }
+   p{
+    margin-left: 10px;  
+   }
+  
+
+   </style>
+
+  </head>
+  <body>
+
+    <div id="main">
+        <h1>Signin</h1><br>
+    <input id="email" type="text" placeholder="enter email" /><br><br>
+    <input id="password" type="text" placeholder="enter password" /><br><br>
+    <button>Sign In</button><br>
+    </div>
+   
+  </body>
+</html>
+
+<script>
+  document.querySelector("button").addEventListener("click", signIN);
+  var regdUsers = JSON.parse(localStorage.getItem("userDatabase"));
+  
+  function signIN() {
+    var email = document.querySelector("#email").value;
+    var password = document.querySelector("#password").value;
+
+    if (email === "admin" && password === "admin") {
+      window.location.href = "admin.html";
+    alert("login successful");
+
+    } else {
+      for (var i = 0; i < regdUsers.length; i++) {
+        if (regdUsers[i].emailAdd == email && regdUsers[i].pass == password) {
+            alert("login successful");
+
+          console.log("registered user");
+          window.location.href = "prod.html";
+        }else{
+            alert("wrong credentials"); 
+        }
+      }
+    }
+  }
+</script>

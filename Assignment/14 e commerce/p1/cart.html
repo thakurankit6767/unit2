@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+ 
+    <style>
+     
+.cardbox .left {
+    /* border: 1px solid red; */
+    width: 750px;
+}
+
+.cardbox .right {
+    /* border: 1px solid red; */
+    width: 400px;
+}
+
+.cardbox .left .cart {
+    height: 170px;
+    border-top: 1px solid grey;
+    padding-top: 15px;
+    padding-bottom: 15px;
+    box-sizing: border-box;
+    display: flex;
+    justify-content: space-between;
+
+}
+
+.cardbox .left .cart .img {
+    /* border: 1px solid green; */
+    width: 100px;
+    background-size: cover;
+
+}
+
+.cardbox .left .cart .imgcontent {
+    /* border: 1px solid green; */
+    width: 360px;
+    padding-left: 10px;
+    box-sizing: border-box;
+
+}
+
+.cardbox .left .cart .counterbox {
+    /* border: 1px solid green; */
+    width: 120px;
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+}
+
+.cardbox .left .cart .price {
+    /* border: 1px solid green; */
+    width: 120px;
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+}
+
+
+.cardbox .left .cart .price .top .grey {
+    color: black;
+    text-align: end;
+    font-size: 10px;
+    text-decoration: line-through;
+}
+
+.cardbox .left .cart .price .top .red {
+    color: rgb(161, 3, 3);
+    text-align: end;
+    font-size: 10px;
+    /* text-decoration: line-through; */
+    font-size: 15px;
+    font-weight: 700;
+}
+
+.cardbox .left .cart .price .bottom {
+    border-left: 1px solid;
+    height: 10px;
+    font-size: 12px;
+    text-align: center;
+    font-weight: bolder;
+    text-decoration: underline;
+}
+
+.cardbox .left .cart .counterbox .top {
+    border: 1px solid black;
+    height: 40px;
+    border-radius: 5px;
+    width: 90px;
+    font-size: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    word-spacing: 10px;
+}
+
+.cardbox .left .cart .counterbox .bottom {
+    /* border-left: 1px solid; */
+    height: 10px;
+    font-size: 12px;
+    text-align: center;
+    font-weight: bolder;
+    text-decoration: underline;
+}
+
+.cardbox .right .checkoutbox {
+    height: 400px;
+    border-radius: 10px;
+    /* background-color: #F5F4F6; */
+    position: -webkit-sticky;
+    position: sticky;
+    top: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.cardbox .right .checkoutbox .discountbox {
+    height: 70px;
+    /* border: 1px solid; */
+    padding: 15px;
+    box-sizing: border-box;
+    background-color: #F5F4F6;
+    border-radius: 5px;
+}
+
+.cardbox .right .checkoutbox .discountbox .Discount {
+    width: 220px;
+    height: 28px;
+    padding-left: 5px;
+
+}
+
+.cardbox .right .checkoutbox .discountbox .btnAPPLY {
+    width: 100px;
+    height: 34px;
+    padding-left: 5px;
+    border-radius: 0px;
+}
+
+.cardbox .right .checkoutbox .btn {
+    background-color: black;
+    color: white;
+    /* font-size: 13px; */
+    border: 1px solid;
+    transition: 0.2s;
+}
+
+
+
+.cardbox .right .checkoutbox .apply {
+    height: 200px;
+    /* border: 1px solid; */
+    padding: 15px;
+    box-sizing: border-box;
+    background-color: #F5F4F6;
+    border-radius: 5px;
+    background-image: url(..//src/Screenshot\ \(742\).png);
+    background-size: cover;
+}
+
+.cardbox .right .checkoutbox .apply .btnCHECKOUT {
+    width: 102%;
+    margin-top: 65px;
+    height: 45px;
+}
+
+ #cont {
+        display: flex;
+      }
+
+      img{
+        width: 200px;
+        height:250px;
+        margin-left: 20px;
+      }
+    </style>
+</head>
+
+<body>
+
+  <div id="cont"></div>
+    <div class="cardbox">
+        <div class="left" id="left">
+
+        </div>
+        <div class="right">
+            <div class="checkoutbox" id="checkoutbox">
+                <div class="discountbox">
+                    <input type="text" class="Discount" placeholder="Discount code">
+                    <input type="button" class="btn btnAPPLY" value="APPLY">
+                </div>
+                <div class="apply">
+                <a href="payment.html"><button class="btn btnCHECKOUT" >checkout</button></a>  
+                </div>
+            </div>
+        </div>
+    </div>
+
+</body>
+
+</html>
+<script>
+   var products = JSON.parse(localStorage.getItem("cartItems"));
+
+ 
+  
+ 
+  displayItem(products);
+  
+  function displayItem(products) {
+ 
+    
+    products.map(function (elem) {
+      var div = document.createElement("div");
+      var img = document.createElement("img");
+      // img.setAttribute("src", elem.image);
+      img.src=elem.image;
+
+      var h2 = document.createElement("h2");
+      h2.textContent = elem.name;
+
+      var price = document.createElement("p");
+      price.textContent = elem.price;
+
+    
+     
+
+      div.append(img, h2, price);
+      document.querySelector("#cont").append(div);
+
+      
+    });
+  }
+
+  displayItem()
+   
+</script>
